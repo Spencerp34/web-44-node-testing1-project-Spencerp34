@@ -147,14 +147,23 @@ class Car {
    */
   drive(distance) {
     
-    this.tank = this.tankSize - (distance/this.mpg)
-    if(this.tank < 0){
-      this.tank = 0
+    // this.tank = this.tankSize - (distance/this.mpg)
+    // if(this.tank < 0){
+    //   this.tank = 0
+    // }
+    // this.odometer += distance
+    // if(distance > this.maxDist){
+    //   this.tank = `${this.tank} (ran out of gas after ${this.maxDist})`
+    // }
+    // return this.odometer
+
+    if(distance <= this.maxDist){
+      this.odometer += distance
+      this.tank -= (distance/this.mpg)
+      return this.odometer
     }
-    this.odometer += distance
-    if(distance > this.maxDist){
-      this.tank = `${this.tank} (ran out of gas after ${this.maxDist})`
-    }
+    this.odometer += this.maxDist
+    this.tank = 0
     return this.odometer
 
   }

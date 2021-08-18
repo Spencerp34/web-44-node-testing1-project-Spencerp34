@@ -114,7 +114,7 @@ describe('[Exercise 6] Car', () => {
   })
   test('[17] refueling allows to keep driving', () => {
     focus.drive(700)
-    expect(focus.tank).toBe('0 (ran out of gas after 600)')
+    expect(focus.tank).toBe(0)
     focus.refuel(10)
     expect(focus.maxDist).toBe(300)
 
