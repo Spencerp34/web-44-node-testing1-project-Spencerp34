@@ -155,11 +155,7 @@ class Car {
     if(distance > this.maxDist){
       this.tank = `${this.tank} (ran out of gas after ${this.maxDist})`
     }
-    return {
-      name: this.name,
-      odometer: this.odometer,
-      tank: this.tank
-      }
+    return this.odometer
 
   }
 
